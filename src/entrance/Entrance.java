@@ -22,10 +22,10 @@ public class Entrance {
 
 	public Entrance() {
 		try {
-			init();
-			getDealInfo();
-			getProjectList();
-			getProject();
+//			init();
+//			getDealInfo();
+//			getProjectList();
+//			getProject();
 			getSecondHandHouse();
 		} catch (Exception e) {
 			e.printStackTrace();

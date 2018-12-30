@@ -31,7 +31,7 @@ public class GetSecondHandHouse extends Thread {
 			System.out.println("第" + page + "采集完成");
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("错误");
+			System.out.println(page + "错误");
 		}
 	}
 
@@ -66,15 +66,16 @@ public class GetSecondHandHouse extends Thread {
 			use = row.select("td:eq(4)").text();
 
 			floor = row.select("td:eq(5)").text();
+			if (floor.contains("-")) {
+				floor = "0";
+			}
 			if (floor.equals("")) {
 				floor = "0";
 			}
-
 			houseCoding = row.select("td:eq(6)").text();
 			agent = row.select("td:eq(7)").text();
 			releaseDate = row.select("td:eq(8)").text();
 			addToDatabase();
-
 		}
 
 	}
